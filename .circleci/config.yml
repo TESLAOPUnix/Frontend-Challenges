@@ -8,7 +8,7 @@ jobs:
   steps:
    - checkout
    - run: npm install
-   - run: ls /home/circleci/repo/public
+ #  - run: ls /home/circleci/repo/public
    - run: npm start
 workflows:
  install_now:
