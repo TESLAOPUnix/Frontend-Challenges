@@ -8,6 +8,7 @@ jobs:
    - checkout
    - run: npm install
    - run: pwd
+   - run: ls
    - run: npm start
 workflows:
  install_now:
