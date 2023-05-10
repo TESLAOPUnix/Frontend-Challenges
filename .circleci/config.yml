@@ -3,7 +3,7 @@ version: 2.1
 jobs:
  build:
   docker:
-   - img: cimg/node:latest
+   - image: cimg/node:latest
   steps:
    - checkout
    - run: npm run build 
