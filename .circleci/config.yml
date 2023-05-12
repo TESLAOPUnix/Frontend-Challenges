@@ -12,7 +12,7 @@ jobs:
   build:
     docker:
       - image: cimg/node:20.1.0
-    working_directory: /home/circleci/repo/public
+    working_directory: /home/circleci/repo/
     steps:
       - checkout
       - run: npm install
