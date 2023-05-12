@@ -1,16 +1,25 @@
 version: 2.1
-# this is to mention the version of circle ci 
+
 jobs:
- install:
-  docker:
-   - image: cimg/node:20.1.0
-  working_directory: ~/repo 
-  steps:
-   - checkout
-   - run: npm install
- #  - run: ls /home/circleci/repo/public
-   - run: npm start
+  install:
+    docker:
+      - image: cimg/node:20.1.0
+    working_directory: /home/circleci/repo 
+    steps:
+      - checkout
+      - run: npm install
+
+  build:
+    docker:
+      - image: cimg/node:20.1.0
+    working_directory: /home/circleci/repo 
+    steps:
+      - checkout
+      - run: npm install
+      - run: npm start
+
 workflows:
- install_now:
-  jobs:
-   - install
+  install_and_build:
+    jobs:
+      - install
+      - build
